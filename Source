@@ -1,0 +1,275 @@
+local findingSISGUI = game.CoreGui:FindFirstChild("SISGUI")
+if findingSISGUI then
+	findingSISGUI:Destroy()
+end
+
+local SISGUI = Instance.new("ScreenGui")
+local Slender = Instance.new("TextLabel")
+local DescLabel = Instance.new("TextLabel")
+local Executed = Instance.new("TextButton")
+local Others = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local CG = Instance.new("TextButton")
+local MbCF = Instance.new("ImageButton")
+local CF = Instance.new("TextButton")
+
+SISGUI.Name = "SISGUI"
+SISGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Slender.Name = "Slender"
+Slender.Parent = SISGUI
+Slender.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Slender.BackgroundTransparency = 1.000
+Slender.Position = UDim2.new(0.0540000014, 0, 0.781000018, 0)
+Slender.Size = UDim2.new(0, 550, 0, 20)
+Slender.Font = Enum.Font.SourceSansBold
+Slender.Text = "Slender - "
+Slender.TextColor3 = Color3.fromRGB(255, 0, 0)
+Slender.TextScaled = true
+Slender.TextSize = 20.000
+Slender.TextWrapped = true
+Slender.TextXAlignment = Enum.TextXAlignment.Left
+
+DescLabel.Name = "DescLabel"
+DescLabel.Parent = SISGUI
+DescLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DescLabel.BackgroundTransparency = 1.000
+DescLabel.BorderSizePixel = 0
+DescLabel.Position = UDim2.new(0.750999928, 0, 0.781000018, 0)
+DescLabel.Size = UDim2.new(0, 154, 0, 20)
+DescLabel.Font = Enum.Font.SourceSansBold
+DescLabel.Text = "FPS -"
+DescLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+DescLabel.TextScaled = true
+DescLabel.TextSize = 18.000
+DescLabel.TextWrapped = true
+DescLabel.TextXAlignment = Enum.TextXAlignment.Right
+
+Executed.Name = "Executed"
+Executed.Parent = SISGUI
+Executed.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Executed.BackgroundTransparency = 1.000
+Executed.Position = UDim2.new(0.0540000014, 0, 0.816746056, 0)
+Executed.Size = UDim2.new(0, 45, 0, 45)
+Executed.Font = Enum.Font.SourceSansBold
+Executed.Text = "X"
+Executed.TextColor3 = Color3.fromRGB(0, 255, 0)
+Executed.TextSize = 80.000
+Executed.TextXAlignment = Enum.TextXAlignment.Left
+
+Others.Name = "Others"
+Others.Parent = SISGUI
+Others.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Others.BackgroundTransparency = 0.300
+Others.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Others.Position = UDim2.new(0.231847137, 0, 0.301587313, 0)
+Others.Size = UDim2.new(0.533672154, 0, 0.396825403, 0)
+Others.Visible = false
+
+TextLabel.Parent = Others
+TextLabel.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+TextLabel.BackgroundTransparency = 0.700
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.0595238097, 0, 0.0799999982, 0)
+TextLabel.Size = UDim2.new(0.882073224, 0, 0.779999971, 0)
+TextLabel.Font = Enum.Font.IndieFlower
+TextLabel.Text = "Press R to teleport to the next page, press B to teleport to the next page in the locked zone ('Restore power' room), click X to toggle this form. A green text label is your FPS. A red text label indicates the slender teller (who is the slender)."
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+CG.Name = "CG"
+CG.Parent = Others
+CG.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+CG.BackgroundTransparency = 0.700
+CG.BorderColor3 = Color3.fromRGB(170, 0, 0)
+CG.Position = UDim2.new(0.0599999987, 0, 0.879999995, 0)
+CG.Size = UDim2.new(0.405276895, 0, 0.100000001, 0)
+CG.Font = Enum.Font.IndieFlower
+CG.Text = "Close Gui"
+CG.TextColor3 = Color3.fromRGB(0, 0, 0)
+CG.TextScaled = true
+CG.TextSize = 14.000
+CG.TextWrapped = true
+
+MbCF.Name = "MbCF"
+MbCF.Parent = Others
+MbCF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MbCF.BackgroundTransparency = 1.000
+MbCF.Position = UDim2.new(0.940476179, 0, 0, 0)
+MbCF.Size = UDim2.new(0.0476796329, 0, 0.0799999982, 0)
+MbCF.Image = "rbxassetid://8874551390"
+
+CF.Name = "CF"
+CF.Parent = Others
+CF.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+CF.BackgroundTransparency = 0.700
+CF.BorderColor3 = Color3.fromRGB(0, 170, 0)
+CF.Position = UDim2.new(0.535000026, 0, 0.879999995, 0)
+CF.Size = UDim2.new(0.405276895, 0, 0.100000001, 0)
+CF.Font = Enum.Font.IndieFlower
+CF.Text = "Close Form"
+CF.TextColor3 = Color3.fromRGB(0, 0, 0)
+CF.TextScaled = true
+CF.TextSize = 14.000
+CF.TextWrapped = true
+
+local function TMAJMS()
+	local script = Instance.new('LocalScript', DescLabel)
+
+	local textLabel = script.Parent
+	
+	while wait(.5) do
+		local fpsAmount = math.floor(workspace:GetRealPhysicsFPS())
+		textLabel.Text = "FPS - "..fpsAmount
+	end
+end
+coroutine.wrap(TMAJMS)()
+local function ZVCROUD_fake_script()
+	local script = Instance.new('LocalScript', SISGUI)
+
+	local Player = game.Players.LocalPlayer
+	local Mouse = Player:GetMouse()
+	local GameValues = game.ReplicatedStorage.GameValues
+	local Slender = script.Parent.Slender
+	
+	local function TeleportToPage()
+		local Char = Player.Character
+		local Map = game.Workspace.MAP
+		local Pages = Map.Pages:GetChildren()
+		for i, v in pairs(Pages)do
+			if v:IsA("Part") and v.Transparency == 0 then
+				Char.HumanoidRootPart.CFrame = v.CFrame + (v.CFrame.lookVector*3)
+			end
+		end
+	end
+	
+	local function TeleportToHPageSpawn()
+		local Char = Player.Character
+		local Map = game.Workspace.MAP
+		local Pages = Map.HPageSpawns:GetChildren()
+		for i, v in pairs(Pages)do
+			if v:IsA("Part") and v.Transparency == 0 then
+				Char.HumanoidRootPart.CFrame = v.CFrame + (v.CFrame.lookVector*3)
+			end
+		end
+	end
+	
+	
+	local function SlenderRadar()
+		local GameValues = game.ReplicatedStorage.GameValues
+		local CurrentSlender = GameValues.lastslender.Value
+		local Players = game.Players:GetPlayers()
+		for i, v in pairs(Players)do
+			if v.Character.HumanoidRootPart:FindFirstChild("BGUI") then
+				v.Character.HumanoidRootPart:FindFirstChild("BGUI"):Destroy()
+			end
+			if v.Character~= nil and v.Name == CurrentSlender then
+				local BGUI = Instance.new("BillboardGui")
+				local Shower = Instance.new("ImageLabel")
+	
+				BGUI.Name = "BGUI"
+				BGUI.Parent = v.Character.HumanoidRootPart
+				BGUI.AlwaysOnTop = true
+				BGUI.Size = UDim2.new(0, 50, 0, 50)
+	
+				Shower.Parent = BGUI
+				Shower.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+				Shower.BackgroundTransparency = 0.700
+				Shower.Size = UDim2.new(0, 50, 0, 50)
+				Shower.Image = "rbxassetid://13306637632"
+				
+				for i, v in pairs(v.Character:GetDescendants())do
+					if v:IsA("Part") or v:IsA("MeshPart") then
+						v.Transparency = 1
+					end
+				end
+			end
+		end
+	end
+	
+	SlenderRadar()
+	Mouse.KeyDown:Connect(function(Key)
+		if Key == "r" then
+			TeleportToPage()
+		end
+	end)
+	
+	Mouse.KeyDown:Connect(function(Key)
+		if Key == "b" then
+			TeleportToHPageSpawn()
+		end
+	end)
+	
+	game.ReplicatedStorage.GameValues.lastslender.Changed:Connect(function()
+		Slender.Text = "Slender - "..game.ReplicatedStorage.GameValues.lastslender.Value
+		SlenderRadar()
+	end)
+end
+coroutine.wrap(ZVCROUD_fake_script)()
+local function UWQDUK()
+	local script = Instance.new('LocalScript', Executed)
+
+	local enabled = false
+	script.Parent.MouseButton1Click:Connect(function()
+		enabled = not enabled
+		if enabled then
+			script.Parent.Parent.Others.Visible = true
+			script.Parent.TextColor3 = Color3.fromRGB(255, 0, 0)
+		else
+			script.Parent.Parent.Others.Visible = false
+			script.Parent.TextColor3 = Color3.fromRGB(0, 255, 0)
+		end
+	end)
+end
+coroutine.wrap(UWQDUK)()
+local function GEUUXJ()
+	local script = Instance.new('LocalScript', CG)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(GEUUXJ)()
+local function CLELW()
+	local script = Instance.new('LocalScript', MbCF)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+		script.Parent.Parent.Parent.Executed.TextColor3 = Color3.new(0, 1, 0)
+	end)
+end
+coroutine.wrap(CLELW)()
+local function OOFK()
+	local script = Instance.new('LocalScript', CF)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+		script.Parent.Parent.Parent.Executed.TextColor3 = Color3.new(0, 1, 0)
+	end)
+end
+coroutine.wrap(OOFK)()
+local function DUTLR()
+	local script = Instance.new('LocalScript', SISGUI)
+
+	local audioId = "6958727243"
+	local sound = Instance.new("Sound", game.ReplicatedFirst)
+	sound.SoundId = "rbxassetid://" .. audioId
+	sound.Volume = 10
+	sound:Play()
+	
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Stop it, Slender!";
+		Text = "Stay informed: Keep yourself updated on the latest trends and techniques used by exploiters.";
+		Duration = 5; 
+		Button1 = "OK";
+	})
+	
+	wait(4.032)
+	sound:Destroy()
+	
+end
+coroutine.wrap(DUTLR)()
+
+SISGUI.Parent = game.CoreGui
